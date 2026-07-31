@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Privacy &amp; Cookies — Amberwave</title>
+<meta name="description" content="How Amberwave uses cookies and handles your data." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<div class="grain"></div>
+
+<nav class="site-nav">
+  <div class="wrap">
+    <a href="index.html" class="logo"><img src="images/logo-mark.svg" alt="" />AMBERWAVE<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="artists.html">Artists</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="apply.html" class="btn btn-primary">Apply to Amberwave Records</a></li>
+    </ul>
+    <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<header class="page-hero">
+  <div class="wrap" data-reveal>
+    <span class="eyebrow">Legal</span>
+    <h1>Privacy &amp; cookies.</h1>
+    <p>The short version: we don't sell your data, and we don't run ad trackers. Here's what we actually do.</p>
+  </div>
+</header>
+
+<section class="section">
+  <div class="wrap" style="max-width:760px;color:var(--mute);line-height:1.8;">
+    <h3 style="color:var(--paper);font-family:var(--display);font-size:24px;margin-bottom:10px;">What cookies we use</h3>
+    <p style="margin-bottom:28px;">A small local cookie/localStorage flag to remember you've dismissed the cookie notice, and one to remember a manually chosen site language. Neither is used for advertising or shared with third parties.</p>
+
+    <h3 style="color:var(--paper);font-family:var(--display);font-size:24px;margin-bottom:10px;">What we collect through forms</h3>
+    <p style="margin-bottom:28px;">When you apply to Amberwave Records or send us a message, we store what you submit (name, contact info, links, and any verification photos on the application form) so our scouting team can review it. This is only ever seen by our team — it's never posted publicly or sold.</p>
+
+    <h3 style="color:var(--paper);font-family:var(--display);font-size:24px;margin-bottom:10px;">Questions</h3>
+    <p>Reach out any time via our <a href="contact.html" style="color:var(--signal);">contact page</a>.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-bottom">
+      <span>© <span id="year"></span> Amberwave Music Group</span>
+      <span>Built to find what's next.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>

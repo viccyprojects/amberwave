@@ -37,15 +37,29 @@
       <h1 data-i18n-html="home.h1_html">We find<br />the sound<br /><span class="accent">before</span> the industry does.</h1>
       <p class="lede" data-i18n="home.lede">Amberwave scouts unsigned artists and builds real marketing behind them — playlisting, content, press, fan growth — before they ever sign a deal. When you're ready, apply to Amberwave Records directly.</p>
       <div class="hero-actions">
-        <a href="apply.html" class="btn btn-primary" data-i18n="nav.apply">Apply to Amberwave Records</a>
+        <a href="apply.html" id="heroApplyBtn" class="btn btn-primary" data-i18n="nav.apply">Apply to Amberwave Records</a>
         <a href="about.html" class="btn btn-ghost" data-i18n="home.aboutBtn">How scouting works</a>
       </div>
     </div>
     <div class="hero-visual" data-reveal data-reveal-delay="1">
-      <canvas class="signal-line tall" style="height:100%;"></canvas>
+      <div id="heroBrand" class="hero-brand">
+        <img src="images/logo-mark.svg" alt="Amberwave" />
+        <span>AMBER<b>WAVE</b></span>
+      </div>
     </div>
   </div>
 </header>
+
+<section id="homeArtists" class="section" hidden>
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow">Roster</span>
+      <h2>Artists on Amberwave.</h2>
+      <p>Scouted, marketed, and — for some — signed. <a href="artists.html" style="color:var(--signal);">See everyone →</a></p>
+    </div>
+    <div id="homeArtistGrid" class="home-artist-grid"></div>
+  </div>
+</section>
 
 <section class="stats-bar">
   <div class="wrap">
@@ -153,7 +167,7 @@
 <div class="wrap">
   <div class="cta-band" data-reveal>
     <h2 data-i18n="home.ctaH2">Your next release could be the one we hear.</h2>
-    <a href="apply.html" class="btn btn-primary" style="background:var(--ink);color:var(--paper);" data-i18n="nav.apply">Apply to Amberwave Records</a>
+    <a href="apply.html" id="finalApplyBtn" class="btn btn-primary" style="background:var(--ink);color:var(--paper);" data-i18n="nav.apply">Apply to Amberwave Records</a>
   </div>
 </div>
 
@@ -188,11 +202,26 @@
   </div>
 </footer>
 
+<a href="apply.html" id="floatApply" class="float-apply" data-i18n="nav.applyShort">Apply</a>
+
+<div id="cookieBanner" class="cookie-banner" hidden>
+  <p>We use cookies to keep the site running smoothly. <a href="#" id="cookieLearnMore">Learn more</a></p>
+  <div class="cookie-banner-more" id="cookieMore" hidden>
+    <p>We use a small number of cookies for basic site function and to remember things like your language choice. We don't sell your data or run ad trackers. <a href="privacy.html">Full privacy policy →</a></p>
+  </div>
+  <div class="cookie-banner-actions">
+    <button id="cookieAccept" class="btn btn-primary">Accept</button>
+  </div>
+</div>
+
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
 <script src="js/firebase-config.js"></script>
 <script src="js/i18n.js"></script>
 <script src="js/main.js"></script>
+<script src="js/home-artists.js"></script>
+<script src="js/home-effects.js"></script>
+<script src="js/cookie-consent.js"></script>
 <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
 </html>
