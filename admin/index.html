@@ -1,1 +1,104 @@
-html
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Amberwave — Admin</title>
+<meta name="robots" content="noindex, nofollow" />
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../css/style.css" />
+<link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+
+<!-- ===================== LOGIN ===================== -->
+<div id="loginScreen" class="login-screen">
+  <div class="login-card">
+    <div class="logo" style="margin-bottom:8px;">AMBERWAVE<span>.</span></div>
+    <p class="eyebrow" style="margin-bottom:28px;">Admin access</p>
+    <div id="loginMsg" class="form-msg"></div>
+    <form id="loginForm">
+      <div class="field">
+        <label for="loginEmail">Email</label>
+        <input type="email" id="loginEmail" required placeholder="you@amberwave.com" />
+      </div>
+      <div class="field">
+        <label for="loginPassword">Password</label>
+        <input type="password" id="loginPassword" required placeholder="••••••••" />
+      </div>
+      <button type="submit" class="btn btn-primary btn-block">Log in</button>
+    </form>
+  </div>
+</div>
+
+<!-- ===================== DASHBOARD ===================== -->
+<div id="dashboard" class="dashboard" hidden>
+  <aside class="side-nav">
+    <div class="logo" style="margin-bottom:36px;">AMBERWAVE<span>.</span></div>
+    <button class="tab-btn active" data-tab="applications">Applications</button>
+    <button class="tab-btn" data-tab="messages">Messages</button>
+    <button class="tab-btn" data-tab="content">Site content</button>
+    <button id="logoutBtn" class="tab-btn logout">Log out</button>
+  </aside>
+
+  <main class="panel">
+    <!-- Applications tab -->
+    <section id="tab-applications" class="tab-panel">
+      <div class="panel-head">
+        <h2>Applications</h2>
+        <span class="eyebrow" id="appCount">0 total</span>
+      </div>
+      <div class="table-wrap">
+        <table id="appTable">
+          <thead>
+            <tr>
+              <th>Name</th><th>Platform</th><th>Genre</th><th>Profile</th><th>Verification</th><th>Status</th><th>Received</th><th></th>
+            </tr>
+          </thead>
+          <tbody id="appRows"></tbody>
+        </table>
+        <p id="appEmpty" class="empty-state" hidden>No applications yet.</p>
+      </div>
+    </section>
+
+    <!-- Messages tab -->
+    <section id="tab-messages" class="tab-panel" hidden>
+      <div class="panel-head">
+        <h2>Messages</h2>
+        <span class="eyebrow" id="msgCount">0 total</span>
+      </div>
+      <div class="table-wrap">
+        <table id="msgTable">
+          <thead>
+            <tr><th>Name</th><th>Subject</th><th>Email</th><th>Received</th><th></th></tr>
+          </thead>
+          <tbody id="msgRows"></tbody>
+        </table>
+        <p id="msgEmpty" class="empty-state" hidden>No messages yet.</p>
+      </div>
+    </section>
+
+    <!-- Site content tab -->
+    <section id="tab-content" class="tab-panel" hidden>
+      <div class="panel-head">
+        <h2>Site content</h2>
+        <span class="eyebrow">Live on Amberwave home page</span>
+      </div>
+      <p style="color:var(--mute);max-width:60ch;margin-bottom:28px;">
+        Edit the numbers shown in the stats bar on the home page. Uncheck "Show on site"
+        to remove any stat — including the scouted-streams count — without deleting it.
+      </p>
+      <div id="statFields" class="stat-editor"></div>
+      <button id="saveContentBtn" class="btn btn-primary" style="margin-top:12px;">Save changes</button>
+      <p id="contentSaved" class="form-msg" style="margin-top:16px;"></p>
+    </section>
+  </main>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script src="../js/firebase-config.js"></script>
+<script src="admin.js"></script>
+</body>
+</html>
