@@ -4,7 +4,7 @@
    "Upload presets" → Add upload preset → Signing Mode: Unsigned
    ========================================================= */
 const cloudinaryConfig = {
-  cloudName: "dbgxllxdb",
-  uploadPreset: "YOUR_UPLOAD_PRESET", // create a new unsigned preset for this project — see README
+  cloudName: "nsdt1igh",
+  uploadPreset: "ml_default",
   folder: "amberwave/verification"       // optional — keeps these uploads grouped in their own folder
 };
