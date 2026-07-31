@@ -11,6 +11,18 @@ const firebaseConfig = {
   appId: "1:652434917194:web:25f3dfa3edc1ff5e53a3b3"
 };
 
-firebase.initializeApp(firebaseConfig);
-const db = firebase.firestore();
-const auth = firebase.auth();
+let db, auth;
+try {
+  if (typeof firebase === "undefined") {
+    throw new Error("Firebase SDK didn't load (check your internet connection, or an ad/script blocker may be blocking gstatic.com).");
+  }
+  firebase.initializeApp(firebaseConfig);
+  db = firebase.firestore();
+  auth = firebase.auth();
+} catch (err) {
+  // Don't let a failed Firebase init silently break every button on the page —
+  // record it so any page (like /admin) can show a real message instead of
+  // just doing nothing when someone clicks something.
+  window.__awFirebaseInitError = err;
+  console.error("Firebase init failed:", err);
+}
