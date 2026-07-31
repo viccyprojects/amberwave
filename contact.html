@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Contact — Amberwave</title>
+<meta name="description" content="Get in touch with Amberwave for press, partnerships, or general questions." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<div class="grain"></div>
+
+<nav class="site-nav">
+  <div class="wrap">
+    <a href="index.html" class="logo">AMBERWAVE<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+      <li><a href="apply.html" class="btn btn-primary">Apply to Amberwave Records</a></li>
+    </ul>
+    <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<canvas class="signal-line"></canvas>
+
+<header class="page-hero">
+  <div class="wrap" data-reveal>
+    <span class="eyebrow">Contact</span>
+    <h1>Not an artist<br />application? Start here.</h1>
+    <p>Press, partnerships, playlist curators, or general questions — send us a message and we'll route it to the right team.</p>
+  </div>
+</header>
+
+<section class="section" style="padding-top:40px;">
+  <div class="wrap split" style="align-items:flex-start;">
+    <div>
+      <div id="contactMsg" class="form-msg"></div>
+      <form id="contactForm" class="form-shell" data-reveal>
+        <div class="field-row">
+          <div class="field">
+            <label for="cName">Your name</label>
+            <input type="text" id="cName" name="cName" required placeholder="Full name" />
+          </div>
+          <div class="field">
+            <label for="cEmail">Email</label>
+            <input type="email" id="cEmail" name="cEmail" required placeholder="you@email.com" />
+          </div>
+        </div>
+        <div class="field">
+          <label for="cSubject">Subject</label>
+          <select id="cSubject" name="cSubject" required>
+            <option value="" disabled selected>Choose a topic</option>
+            <option value="Press">Press</option>
+            <option value="Partnership">Partnership</option>
+            <option value="Playlist / curator">Playlist / curator</option>
+            <option value="General question">General question</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="cMessage">Message</label>
+          <textarea id="cMessage" name="cMessage" required placeholder="What's on your mind?"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block" id="contactSubmitBtn">Send message</button>
+      </form>
+    </div>
+
+    <div data-reveal data-reveal-delay="1">
+      <span class="eyebrow">FAQ</span>
+      <h2 style="font-size:clamp(28px,3.6vw,38px);margin-top:14px;">Quick answers</h2>
+      <div style="margin-top:28px;display:flex;flex-direction:column;gap:22px;">
+        <div>
+          <h4 style="font-size:18px;text-transform:none;font-family:var(--body);font-weight:600;">Is this the artist application?</h4>
+          <p style="color:var(--mute);margin-top:6px;">No — that lives on our <a href="apply.html" style="color:var(--signal);">Apply to Amberwave Records</a> page. This form is for everything else.</p>
+        </div>
+        <div>
+          <h4 style="font-size:18px;text-transform:none;font-family:var(--body);font-weight:600;">Does scouting cost anything?</h4>
+          <p style="color:var(--mute);margin-top:6px;">No. Scouting and marketing support is free for artists we take on — we only earn once you choose to sign with Amberwave Records.</p>
+        </div>
+        <div>
+          <h4 style="font-size:18px;text-transform:none;font-family:var(--body);font-weight:600;">How long does review take?</h4>
+          <p style="color:var(--mute);margin-top:6px;">Most applicants hear back within two to three weeks.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="logo" style="margin-bottom:14px;">AMBERWAVE<span>.</span></div>
+        <p>An artist scouting studio and independent record label — we market first, sign second.</p>
+      </div>
+      <div>
+        <h5>Site</h5>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div>
+        <h5>Get In</h5>
+        <a href="apply.html">Apply to Amberwave Records</a>
+        <a href="contact.html">General inquiries</a>
+      </div>
+      <div>
+        <h5>Platforms we scout</h5>
+        <p>Spotify · Apple Music · YouTube · SoundCloud · Audiomack · Boomplay</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="year"></span> Amberwave Music Group</span>
+      <span>Built to find what's next.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script src="js/firebase-config.js"></script>
+<script src="js/main.js"></script>
+<script src="js/contact.js"></script>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>

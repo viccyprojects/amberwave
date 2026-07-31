@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Apply to Amberwave Records</title>
+<meta name="description" content="Apply to Amberwave Records — tell us your name, your platform, and link your profile." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<div class="grain"></div>
+
+<nav class="site-nav">
+  <div class="wrap">
+    <a href="index.html" class="logo">AMBERWAVE<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="apply.html" class="btn btn-primary active">Apply to Amberwave Records</a></li>
+    </ul>
+    <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<canvas class="signal-line"></canvas>
+
+<header class="page-hero">
+  <div class="wrap" data-reveal>
+    <span class="eyebrow">Application</span>
+    <h1>Apply to<br />Amberwave Records.</h1>
+    <p>Two minutes. Tell us who you are, where your music lives, and link your profile — our scouting team reviews every submission.</p>
+  </div>
+</header>
+
+<section class="section" style="padding-top:40px;">
+  <div class="wrap">
+
+    <div id="formMsg" class="form-msg"></div>
+
+    <form id="applyForm" class="form-shell" data-reveal>
+      <div class="field-row">
+        <div class="field">
+          <label for="fullName">Your name</label>
+          <input type="text" id="fullName" name="fullName" required placeholder="Full name" />
+        </div>
+        <div class="field">
+          <label for="stageName">Artist / stage name</label>
+          <input type="text" id="stageName" name="stageName" placeholder="Optional" />
+        </div>
+      </div>
+
+      <div class="field-row">
+        <div class="field">
+          <label for="platform">Platform</label>
+          <select id="platform" name="platform" required>
+            <option value="" disabled selected>Choose your platform</option>
+            <option value="Spotify">Spotify</option>
+            <option value="Apple Music">Apple Music</option>
+            <option value="YouTube Music">YouTube Music</option>
+            <option value="SoundCloud">SoundCloud</option>
+            <option value="Audiomack">Audiomack</option>
+            <option value="Boomplay">Boomplay</option>
+            <option value="TikTok">TikTok</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="genre">Genre</label>
+          <input type="text" id="genre" name="genre" required placeholder="e.g. Afrobeats, R&B, Indie Pop" />
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="profileLink">Link to your profile</label>
+        <input type="url" id="profileLink" name="profileLink" required placeholder="https://open.spotify.com/artist/..." />
+      </div>
+
+      <div class="field-row">
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required placeholder="you@email.com" />
+        </div>
+        <div class="field">
+          <label for="phone">Phone <span style="text-transform:none;">(optional)</span></label>
+          <input type="tel" id="phone" name="phone" placeholder="+234..." />
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="message">Tell us about you</label>
+        <textarea id="message" name="message" required placeholder="Your story, your sound, recent numbers, anything worth knowing."></textarea>
+      </div>
+
+      <div class="verify-block">
+        <div class="verify-head">
+          <h4>Quick identity check</h4>
+          <p>Two photos to confirm you're a real applicant and cut down on spam. These are only ever seen by our scouting team, never posted publicly.</p>
+        </div>
+        <div class="upload-row">
+          <label class="upload-box" id="idBox">
+            <img class="up-preview" id="idPreview" alt="" />
+            <div class="up-check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12L10 17L19 8" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <span class="up-icon"><svg viewBox="0 0 32 32" fill="none"><rect x="3" y="7" width="26" height="18" rx="3" stroke="currentColor" stroke-width="1.8"/><circle cx="11" cy="16" r="3.4" stroke="currentColor" stroke-width="1.8"/><path d="M18 13H24M18 17H22" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M7 22C7.6 20 9.1 19 11 19C12.9 19 14.4 20 15 22" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+            <span class="up-label">Photo of your ID</span>
+            <span class="up-hint">Any government-issued ID</span>
+            <input type="file" id="idPhoto" accept="image/*" capture="environment" required />
+          </label>
+          <label class="upload-box" id="selfieBox">
+            <img class="up-preview" id="selfiePreview" alt="" />
+            <div class="up-check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12L10 17L19 8" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <span class="up-icon"><svg viewBox="0 0 32 32" fill="none"><rect x="6" y="4" width="14" height="24" rx="3" stroke="currentColor" stroke-width="1.8"/><circle cx="13" cy="9" r="1.4" fill="currentColor"/><circle cx="13" cy="18" r="4" stroke="currentColor" stroke-width="1.8"/><path d="M22 12L27 9V21L22 18" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span>
+            <span class="up-label">You, holding that ID</span>
+            <span class="up-hint">Face + ID visible together</span>
+            <input type="file" id="selfieWithId" accept="image/*" capture="user" required />
+          </label>
+        </div>
+        <p class="upload-progress" id="uploadProgress">Uploading verification photos…</p>
+        <label class="consent-row">
+          <input type="checkbox" id="idConsent" required />
+          <span>I confirm these photos are of me, and I consent to Amberwave storing them to verify this application. I'm 18+ or applying with a guardian's consent.</span>
+        </label>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-block" id="submitBtn" style="margin-top:24px;">Submit application</button>
+      <p class="form-note">Submitting doesn't sign you to anything. Our scouting team reviews every application and reaches out by email.</p>
+    </form>
+
+    <div id="successState" class="form-shell success-state" style="display:none;">
+      <div class="mark"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12L10 17L19 8" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <h2 style="font-size:32px;">Application received</h2>
+      <p style="color:var(--mute);margin-top:12px;">Our scouting team will listen and follow up by email if it's a fit. Thanks for sending your signal.</p>
+      <a href="index.html" class="btn btn-ghost" style="margin-top:24px;">Back to home</a>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="logo" style="margin-bottom:14px;">AMBERWAVE<span>.</span></div>
+        <p>An artist scouting studio and independent record label — we market first, sign second.</p>
+      </div>
+      <div>
+        <h5>Site</h5>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div>
+        <h5>Get In</h5>
+        <a href="apply.html">Apply to Amberwave Records</a>
+        <a href="contact.html">General inquiries</a>
+      </div>
+      <div>
+        <h5>Platforms we scout</h5>
+        <p>Spotify · Apple Music · YouTube · SoundCloud · Audiomack · Boomplay</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="year"></span> Amberwave Music Group</span>
+      <span>Built to find what's next.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script src="js/firebase-config.js"></script>
+<script src="js/cloudinary-config.js"></script>
+<script src="js/main.js"></script>
+<script src="js/apply.js"></script>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
