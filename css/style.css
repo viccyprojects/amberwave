@@ -790,3 +790,119 @@ footer {
   text-decoration: none;
 }
 .contact-info-item a:hover { color: var(--signal); }
+
+/* =========================================================
+   HERO BRAND MARK — shrinks into the corner on scroll
+   ========================================================= */
+.hero-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  transition: transform .5s cubic-bezier(.2,.8,.2,1), opacity .3s ease;
+  transform-origin: top left;
+}
+.hero-brand img { width: 140px; height: 140px; }
+.hero-brand span {
+  font-family: var(--display);
+  font-size: 40px;
+  letter-spacing: 0.05em;
+  color: var(--paper);
+}
+.hero-brand span b { color: var(--ember); font-weight: inherit; }
+
+body.brand-shrunk .hero-brand {
+  position: fixed;
+  top: 22px;
+  left: 24px;
+  z-index: 200;
+  transform: scale(0.24);
+  transform-origin: top left;
+  pointer-events: none;
+}
+body.brand-shrunk .site-nav .logo { opacity: 0; }
+.site-nav .logo { transition: opacity .3s ease; }
+
+/* =========================================================
+   HOMEPAGE ARTIST GRID — mixed masonry, admin-controlled, no borders
+   ========================================================= */
+.home-artist-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+.home-artist-card {
+  position: relative;
+  display: block;
+  aspect-ratio: 4 / 5;
+  border-radius: var(--radius-m);
+  overflow: hidden;
+  text-decoration: none;
+}
+.home-artist-card.is-large { grid-column: span 2; aspect-ratio: 16 / 9; }
+.home-artist-card img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  transition: transform .5s ease;
+}
+.home-artist-card:hover img { transform: scale(1.04); }
+.home-artist-card .han {
+  position: absolute; left: 0; right: 0; bottom: 0; padding: 16px;
+  font-family: var(--display); font-size: 20px; letter-spacing: .03em; color: var(--paper);
+  background: linear-gradient(0deg, rgba(10,10,12,0.9) 0%, rgba(10,10,12,0) 65%);
+}
+@media (max-width: 640px) {
+  .home-artist-grid { grid-template-columns: 1fr; }
+  .home-artist-card.is-large { grid-column: span 1; }
+}
+
+/* =========================================================
+   FLOATING APPLY BUTTON
+   ========================================================= */
+.float-apply {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 150;
+  background: var(--ember);
+  color: var(--ink);
+  font-family: var(--mono);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 14px 22px;
+  border-radius: 999px;
+  box-shadow: 0 10px 30px rgba(255,106,61,0.35);
+  opacity: 0;
+  transform: translateY(16px);
+  pointer-events: none;
+  transition: opacity .3s ease, transform .3s ease;
+}
+.float-apply.show { opacity: 1; transform: translateY(0); pointer-events: auto; }
+.float-apply:hover { background: var(--signal); }
+
+/* =========================================================
+   COOKIE CONSENT — small corner banner, not a takeover
+   ========================================================= */
+.cookie-banner {
+  position: fixed;
+  left: 18px;
+  bottom: 18px;
+  z-index: 160;
+  max-width: 320px;
+  background: var(--ink-2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-m);
+  padding: 16px 18px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+.cookie-banner p { margin: 0; font-size: 13px; color: var(--mute); line-height: 1.5; }
+.cookie-banner a { color: var(--signal); text-decoration: underline; }
+.cookie-banner-more { margin-top: 10px; }
+.cookie-banner-actions { margin-top: 12px; }
+.cookie-banner-actions .btn { padding: 8px 18px; font-size: 12px; }
+@media (max-width: 640px) {
+  .cookie-banner, .float-apply { left: 12px; right: 12px; bottom: 12px; max-width: none; width: auto; }
+  .float-apply { left: auto; }
+}
