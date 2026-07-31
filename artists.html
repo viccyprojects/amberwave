@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Artists — Amberwave</title>
+<meta name="description" content="The artists Amberwave scouts, markets, and — for some — signs to Amberwave Records." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<div class="grain"></div>
+
+<nav class="site-nav">
+  <div class="wrap">
+    <a href="index.html" class="logo"><img src="images/logo-mark.svg" alt="" />AMBERWAVE<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+      <li><a href="artists.html" class="active" data-i18n="nav.artists">Artists</a></li>
+      <li><a href="about.html" data-i18n="nav.about">About</a></li>
+      <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+      <li><a href="apply.html" class="btn btn-primary" data-i18n="nav.apply">Apply to Amberwave Records</a></li>
+    </ul>
+    <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<header class="page-hero">
+  <div class="wrap" data-reveal>
+    <span class="eyebrow" data-i18n="artists.eyebrow">Roster</span>
+    <h1 data-i18n="artists.h1">Artists on Amberwave.</h1>
+    <p data-i18n="artists.p">Scouted, marketed, and — for some — signed to Amberwave Records. Tap an artist to find them on every platform.</p>
+  </div>
+</header>
+
+<section class="section" style="padding-top:20px;">
+  <div class="wrap">
+    <div id="artistGrid" class="artist-grid"></div>
+    <p id="artistGridEmpty" class="artist-grid-empty" hidden data-i18n="artists.empty">No artists added yet — check back soon.</p>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="cta-band" data-reveal>
+    <h2 data-i18n="home.ctaH2">Your next release could be the one we hear.</h2>
+    <a href="apply.html" class="btn btn-primary" style="background:var(--ink);color:var(--paper);" data-i18n="nav.apply">Apply to Amberwave Records</a>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="logo" style="margin-bottom:14px;"><img src="images/logo-mark.svg" alt="" />AMBERWAVE<span>.</span></div>
+        <p data-i18n="footer.tagline">An artist scouting studio and independent record label — we market first, sign second.</p>
+      </div>
+      <div>
+        <h5 data-i18n="footer.site">Site</h5>
+        <a href="index.html" data-i18n="nav.home">Home</a>
+        <a href="artists.html" data-i18n="nav.artists">Artists</a>
+        <a href="about.html" data-i18n="nav.about">About</a>
+        <a href="contact.html" data-i18n="nav.contact">Contact</a>
+      </div>
+      <div>
+        <h5 data-i18n="footer.getIn">Get In</h5>
+        <a href="apply.html" data-i18n="nav.apply">Apply to Amberwave Records</a>
+        <a href="contact.html" data-i18n="footer.generalInquiries">General inquiries</a>
+      </div>
+      <div>
+        <h5 data-i18n="footer.platformsHeading">Platforms we scout</h5>
+        <p>Spotify · Apple Music · YouTube · SoundCloud · Audiomack · Boomplay</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="year"></span> Amberwave Music Group</span>
+      <span data-i18n="footer.builtToFind">Built to find what's next.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script src="js/firebase-config.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/main.js"></script>
+<script src="js/artists.js"></script>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>

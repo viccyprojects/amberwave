@@ -3,10 +3,12 @@
 A multi-page marketing + application site:
 
 - `index.html` — home (hero, live stats, services, process, testimonials, CTA)
+- `artists.html` — public artist roster grid
+- `artist.html?slug=...` — per-artist smart-link page (choose your platform)
 - `about.html` — about / philosophy
 - `apply.html` — record label application form (name, platform, profile link, genre, contact, pitch)
-- `contact.html` — general inquiries form + FAQ
-- `admin/index.html` — **private admin dashboard** (not linked anywhere on the public site)
+- `contact.html` — general inquiries form + FAQ + admin-editable contact info
+- **`admin/`** ships as a separate zip — see §5 and §7
 
 ## 1. Create a Firebase project
 
@@ -69,20 +71,19 @@ The home page stats bar has four numbers, each wired to a Firestore field under
 - If Firebase isn't set up yet, the page just shows the hardcoded placeholder numbers in the HTML — nothing breaks.
 - Once Firebase is connected, log into `/admin` → **Site content** tab to edit any number, or untick **Show on site** to remove that stat (e.g. the "2,000,000+ scouted" figure) from the live page entirely, any time — including after your testing period.
 
-## 5. The admin panel is intentionally separate
+## 5. The admin panel is now a fully separate bundle
 
-`admin/index.html` is never linked from the public nav or footer — it only exists
-if someone types the URL directly (e.g. `yourdomain.com/admin/`). It's gated by
-Firebase email/password login, so only the account you create in step 1.4 can get in.
-From it you can:
+`admin/` is no longer part of the public site's zip at all — it ships as its own
+separate zip (`amberwave-admin.zip`, see §7) so you can deploy it to a completely
+different URL that the public site's code never mentions. It's still gated by
+Firebase email/password login, so only the account you create in step 1.4
+(`viccylay30@gmail.com`) can get in. From it you can:
 
 - View, update the status of, and delete **applications**
 - View and delete **contact messages**
 - Edit or hide the home page stats
-
-For extra privacy you can also rename the `admin` folder to something less guessable
-(e.g. `admin-9f2k`) before deploying — just make sure the `../css/style.css` and
-`../js/firebase-config.js` relative paths still resolve.
+- Add/edit/delete **artists** and their platform links (§9)
+- Edit the **contact info** strip shown on the contact page (§10)
 
 ## 6. ID verification photos (Cloudinary)
 
@@ -134,17 +135,96 @@ the application record in Firestore. In `/admin`, each application row gets **ID
 - The consent checkbox on the form is a reasonable baseline, not a substitute for
   that privacy notice.
 
-## 7. Deploying
+## 7. Deploying — public site and admin are now two separate bundles
 
-This is a static site (no build step) — it works as-is on Vercel, Netlify, Firebase
-Hosting, or any static host. Just upload the whole folder, keeping the `css/`, `js/`,
-and `admin/` folders alongside the HTML files.
+The admin dashboard is no longer shipped inside the public site's folder — it's a
+**separate zip** so you can host it somewhere the public site never links to or
+reveals (a different subdomain, a different host entirely, IP-restricted, etc.).
+Both bundles talk to the *same* Firebase project, so nothing needs to be duplicated
+in Firestore — you're just splitting where the files live.
+
+- **`amberwave-site.zip`** — the public site (`index.html`, `artists.html`,
+  `artist.html`, `about.html`, `apply.html`, `contact.html`, `css/`, `js/`,
+  `images/`). Deploy this to Vercel/GitHub Pages/Netlify like normal.
+- **`amberwave-admin.zip`** — the admin dashboard, fully self-contained (its own
+  copy of `css/style.css`, `js/firebase-config.js`, `js/cloudinary-config.js`,
+  `js/platforms.js`, `images/logo-mark.svg`). Deploy this separately — a different
+  Vercel project, a different subdomain, whatever you'd like — so its URL is never
+  referenced anywhere in the public site's HTML/JS.
+
+Whichever host you use for the admin bundle, it's still gated by Firebase
+email/password login underneath, so treat the separate URL as an extra layer, not
+a replacement for that login.
+
+**Your admin login:** create a user in **Firebase console → Authentication → Users**
+with email `viccylay30@gmail.com` and a password of your choosing — that's the only
+account able to log into the dashboard.
 
 ## 8. Customizing
 
 - **Colors / fonts**: all in `css/style.css` under the `:root` variables at the top.
-- **Copy**: edit directly in the HTML files.
+  The site now uses a true near-black (`--ink: #0a0a0c`) instead of the earlier
+  indigo-plum tone.
+- **Logo**: `images/logo-mark.svg` — a simple amber-to-signal gradient waveform
+  mark. Swap the file for your own artwork any time; every page references it by
+  the same filename so nothing else needs to change.
+- **Copy**: edit directly in the HTML files (or via `js/lang/*.json` for the
+  translated versions — see the i18n notes below).
 - **Photos**: the design currently uses generated gradients, an animated canvas
   "signal line" (audio-waveform motif), and SVG icons instead of stock photos, so
   there's nothing to license. Swap in real artist/studio photography any time by
   adding `<img>` tags inside `.hero-visual` or `.figure` elements.
+
+## 9. Artists roster + artist smart-link pages
+
+Two new public pages:
+
+- **`artists.html`** — a grid of every visible artist (photo + name overlay, like a
+  typical label roster page), reading from the `artists` Firestore collection.
+- **`artist.html?slug=...`** — a per-artist "smart link" page (the choose-your-platform
+  style page, e.g. `cupidszn.lnk.to`) listing only the platforms the admin enabled
+  for that artist, each with its logo and a Play/Join/Follow button linking straight
+  out to that artist's page on that platform.
+
+Manage all of this from **`/admin` → Artists tab**: add a name and photo, set a
+display order, toggle visibility, and for each platform (Spotify, Apple Music,
+YouTube, YouTube Music, Audiomack, Boomplay, TikTok, SoundCloud, mailing list) tick
+it on and paste the artist's URL for that platform — anything left unticked or
+blank just won't show on their page. New platforms can be added for everyone by
+editing the `AW_PLATFORMS` list in `js/platforms.js`.
+
+Artist photos upload through the same Cloudinary setup as the ID-verification
+photos (see §6) — just make sure your unsigned upload preset allows the
+`amberwave/artists` folder, or leave folder restrictions off in the preset.
+
+## 10. Contact page info block
+
+`contact.html` now shows an optional "Email / Phone / Address / Hours" strip above
+the contact form, editable from **`/admin` → Contact info** tab (`siteConfig/contact`
+in Firestore). Leave any field blank in the admin panel and that item just doesn't
+render — nothing shows until you fill something in.
+
+## 11. Updated Firestore rules
+
+Add these two blocks alongside the ones in §3 so the new collections work the same
+way (public read, admin-only write):
+
+```
+match /artists/{doc} {
+  allow read: if true;
+  allow write: if request.auth != null;
+}
+```
+
+(`siteConfig/{doc}` already covers the new `contact` document from §10 — no change
+needed there.)
+
+## 12. Multi-language (EN / PT / ES / FR)
+
+The four main pages auto-detect a visitor's language from their IP on first visit
+(so it also follows a VPN's exit country) and remember any manual choice from the
+language switcher in the nav, forever, in `localStorage`. Translations live in
+`js/lang/en.json` (also the fallback), `pt.json`, `es.json`, `fr.json` — edit those
+directly to change copy in a given language. `artists.html` and `artist.html` are
+tagged for translation too, but artist names/bios themselves aren't translated
+(they come straight from what the admin enters).

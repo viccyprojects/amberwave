@@ -14,12 +14,13 @@
 
 <nav class="site-nav">
   <div class="wrap">
-    <a href="index.html" class="logo">AMBERWAVE<span>.</span></a>
+    <a href="index.html" class="logo"><img src="images/logo-mark.svg" alt="" />AMBERWAVE<span>.</span></a>
     <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html" class="active">About</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="apply.html" class="btn btn-primary">Apply to Amberwave Records</a></li>
+      <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+      <li><a href="artists.html" data-i18n="nav.artists">Artists</a></li>
+      <li><a href="about.html" class="active" data-i18n="nav.about">About</a></li>
+      <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+      <li><a href="apply.html" class="btn btn-primary" data-i18n="nav.apply">Apply to Amberwave Records</a></li>
     </ul>
     <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
@@ -29,18 +30,18 @@
 
 <header class="page-hero">
   <div class="wrap" data-reveal>
-    <span class="eyebrow">About Amberwave</span>
-    <h1>Marketing comes<br />before the ink dries.</h1>
-    <p>Most labels find you after you've already built an audience. We'd rather help you build it — then talk about signing.</p>
+    <span class="eyebrow" data-i18n="about.eyebrow">About Amberwave</span>
+    <h1 data-i18n-html="about.h1_html">Marketing comes<br />before the ink dries.</h1>
+    <p data-i18n="about.p">Most labels find you after you've already built an audience. We'd rather help you build it — then talk about signing.</p>
   </div>
 </header>
 
 <section class="section">
   <div class="wrap split">
     <div data-reveal>
-      <span class="eyebrow">The problem</span>
-      <h2 style="font-size:clamp(30px,4vw,44px);margin-top:14px;">Most artists get signed, then marketed. We do it backwards.</h2>
-      <p style="color:var(--mute);margin-top:18px;">The traditional path asks an unsigned artist to prove themselves alone first, then hands them a marketing team only after a contract is signed. By then, most of the real growth work — the playlist pitching, the content strategy, the audience building — should already be underway. Amberwave starts there instead.</p>
+      <span class="eyebrow" data-i18n="about.problemEyebrow">The problem</span>
+      <h2 style="font-size:clamp(30px,4vw,44px);margin-top:14px;" data-i18n="about.problemH2">Most artists get signed, then marketed. We do it backwards.</h2>
+      <p style="color:var(--mute);margin-top:18px;" data-i18n="about.problemP">The traditional path asks an unsigned artist to prove themselves alone first, then hands them a marketing team only after a contract is signed. By then, most of the real growth work — the playlist pitching, the content strategy, the audience building — should already be underway. Amberwave starts there instead.</p>
     </div>
     <div class="figure" data-reveal data-reveal-delay="1">
       <canvas class="signal-line" style="height:100%;"></canvas>
@@ -51,26 +52,26 @@
 <section class="section alt">
   <div class="wrap">
     <div class="section-head" data-reveal>
-      <span class="eyebrow">How we're different</span>
-      <h2>Two teams, one artist file.</h2>
-      <p>Our scouting team and our label team share the same notes — nothing gets re-explained when you move from one door to the other.</p>
+      <span class="eyebrow" data-i18n="about.diffEyebrow">How we're different</span>
+      <h2 data-i18n="about.diffH2">Two teams, one artist file.</h2>
+      <p data-i18n="about.diffP">Our scouting team and our label team share the same notes — nothing gets re-explained when you move from one door to the other.</p>
     </div>
     <div class="card-grid">
       <div class="card" data-reveal>
-        <h3>Scouting team</h3>
-        <p>Listens to every submission personally, tracks growth across platforms, and builds a real campaign — playlisting, short-form content, press outreach — around artists who aren't signed to anyone.</p>
+        <h3 data-i18n="about.scoutTitle">Scouting team</h3>
+        <p data-i18n="about.scoutDesc">Listens to every submission personally, tracks growth across platforms, and builds a real campaign — playlisting, short-form content, press outreach — around artists who aren't signed to anyone.</p>
       </div>
       <div class="card" data-reveal data-reveal-delay="1">
-        <h3>Amberwave Records</h3>
-        <p>Our label arm. When an artist is ready, they apply directly — same form, same team, no cold intros. Distribution, release budget, and A&amp;R support that already understands the catalogue.</p>
+        <h3 data-i18n="about.recordsTitle">Amberwave Records</h3>
+        <p data-i18n="about.recordsDesc">Our label arm. When an artist is ready, they apply directly — same form, same team, no cold intros. Distribution, release budget, and A&amp;R support that already understands the catalogue.</p>
       </div>
       <div class="card" data-reveal>
-        <h3>No lock-in scouting</h3>
-        <p>Being scouted and marketed by Amberwave never requires signing anything. You keep your masters and your independence for as long as you want them.</p>
+        <h3 data-i18n="about.lockTitle">No lock-in scouting</h3>
+        <p data-i18n="about.lockDesc">Being scouted and marketed by Amberwave never requires signing anything. You keep your masters and your independence for as long as you want them.</p>
       </div>
       <div class="card" data-reveal data-reveal-delay="1">
-        <h3>Platform-agnostic</h3>
-        <p>We work with artists on Spotify, Apple Music, YouTube, SoundCloud, Audiomack, Boomplay, and beyond — wherever your audience already lives.</p>
+        <h3 data-i18n="about.platformTitle">Platform-agnostic</h3>
+        <p data-i18n="about.platformDesc">We work with artists on Spotify, Apple Music, YouTube, SoundCloud, Audiomack, Boomplay, and beyond — wherever your audience already lives.</p>
       </div>
     </div>
   </div>
@@ -81,24 +82,24 @@
 <section class="section">
   <div class="wrap">
     <div class="section-head" data-reveal>
-      <span class="eyebrow">What we look for</span>
-      <h2>Amberwave, not just noise.</h2>
+      <span class="eyebrow" data-i18n="about.lookEyebrow">What we look for</span>
+      <h2 data-i18n="about.lookH2">Amberwave, not just noise.</h2>
     </div>
     <div class="pill-list" data-reveal>
-      <span class="pill">Consistent releases</span>
-      <span class="pill">A distinct sound</span>
-      <span class="pill">Real, even small, fan engagement</span>
-      <span class="pill">Original writing or production</span>
-      <span class="pill">Any genre, any platform</span>
-      <span class="pill">Willingness to grow in public</span>
+      <span class="pill" data-i18n="about.pill1">Consistent releases</span>
+      <span class="pill" data-i18n="about.pill2">A distinct sound</span>
+      <span class="pill" data-i18n="about.pill3">Real, even small, fan engagement</span>
+      <span class="pill" data-i18n="about.pill4">Original writing or production</span>
+      <span class="pill" data-i18n="about.pill5">Any genre, any platform</span>
+      <span class="pill" data-i18n="about.pill6">Willingness to grow in public</span>
     </div>
   </div>
 </section>
 
 <div class="wrap">
   <div class="cta-band" data-reveal>
-    <h2>Ready to be found?</h2>
-    <a href="apply.html" class="btn btn-primary" style="background:var(--ink);color:var(--paper);">Apply to Amberwave Records</a>
+    <h2 data-i18n="about.ctaH2">Ready to be found?</h2>
+    <a href="apply.html" class="btn btn-primary" style="background:var(--ink);color:var(--paper);" data-i18n="nav.apply">Apply to Amberwave Records</a>
   </div>
 </div>
 
@@ -106,32 +107,34 @@
   <div class="wrap">
     <div class="foot-grid">
       <div>
-        <div class="logo" style="margin-bottom:14px;">AMBERWAVE<span>.</span></div>
-        <p>An artist scouting studio and independent record label — we market first, sign second.</p>
+        <div class="logo" style="margin-bottom:14px;"><img src="images/logo-mark.svg" alt="" />AMBERWAVE<span>.</span></div>
+        <p data-i18n="footer.tagline">An artist scouting studio and independent record label — we market first, sign second.</p>
       </div>
       <div>
-        <h5>Site</h5>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
+        <h5 data-i18n="footer.site">Site</h5>
+        <a href="index.html" data-i18n="nav.home">Home</a>
+        <a href="artists.html" data-i18n="nav.artists">Artists</a>
+        <a href="about.html" data-i18n="nav.about">About</a>
+        <a href="contact.html" data-i18n="nav.contact">Contact</a>
       </div>
       <div>
-        <h5>Get In</h5>
-        <a href="apply.html">Apply to Amberwave Records</a>
-        <a href="contact.html">General inquiries</a>
+        <h5 data-i18n="footer.getIn">Get In</h5>
+        <a href="apply.html" data-i18n="nav.apply">Apply to Amberwave Records</a>
+        <a href="contact.html" data-i18n="footer.generalInquiries">General inquiries</a>
       </div>
       <div>
-        <h5>Platforms we scout</h5>
+        <h5 data-i18n="footer.platformsHeading">Platforms we scout</h5>
         <p>Spotify · Apple Music · YouTube · SoundCloud · Audiomack · Boomplay</p>
       </div>
     </div>
     <div class="foot-bottom">
       <span>© <span id="year"></span> Amberwave Music Group</span>
-      <span>Built to find what's next.</span>
+      <span data-i18n="footer.builtToFind">Built to find what's next.</span>
     </div>
   </div>
 </footer>
 
+<script src="js/i18n.js"></script>
 <script src="js/main.js"></script>
 <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>

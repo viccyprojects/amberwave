@@ -14,12 +14,13 @@
 
 <nav class="site-nav">
   <div class="wrap">
-    <a href="index.html" class="logo">AMBERWAVE<span>.</span></a>
+    <a href="index.html" class="logo"><img src="images/logo-mark.svg" alt="" />AMBERWAVE<span>.</span></a>
     <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="apply.html" class="btn btn-primary active">Apply to Amberwave Records</a></li>
+      <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+      <li><a href="artists.html" data-i18n="nav.artists">Artists</a></li>
+      <li><a href="about.html" data-i18n="nav.about">About</a></li>
+      <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+      <li><a href="apply.html" class="btn btn-primary active" data-i18n="nav.apply">Apply to Amberwave Records</a></li>
     </ul>
     <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
@@ -29,9 +30,9 @@
 
 <header class="page-hero">
   <div class="wrap" data-reveal>
-    <span class="eyebrow">Application</span>
-    <h1>Apply to<br />Amberwave Records.</h1>
-    <p>Two minutes. Tell us who you are, where your music lives, and link your profile — our scouting team reviews every submission.</p>
+    <span class="eyebrow" data-i18n="apply.eyebrow">Application</span>
+    <h1 data-i18n-html="apply.h1_html">Apply to<br />Amberwave Records.</h1>
+    <p data-i18n="apply.p">Two minutes. Tell us who you are, where your music lives, and link your profile — our scouting team reviews every submission.</p>
   </div>
 </header>
 
@@ -43,20 +44,20 @@
     <form id="applyForm" class="form-shell" data-reveal>
       <div class="field-row">
         <div class="field">
-          <label for="fullName">Your name</label>
-          <input type="text" id="fullName" name="fullName" required placeholder="Full name" />
+          <label for="fullName" data-i18n="apply.fullNameLabel">Your name</label>
+          <input type="text" id="fullName" name="fullName" required placeholder="Full name" data-i18n-placeholder="apply.fullNamePlaceholder" />
         </div>
         <div class="field">
-          <label for="stageName">Artist / stage name</label>
-          <input type="text" id="stageName" name="stageName" placeholder="Optional" />
+          <label for="stageName" data-i18n="apply.stageNameLabel">Artist / stage name</label>
+          <input type="text" id="stageName" name="stageName" placeholder="Optional" data-i18n-placeholder="apply.stageNamePlaceholder" />
         </div>
       </div>
 
       <div class="field-row">
         <div class="field">
-          <label for="platform">Platform</label>
+          <label for="platform" data-i18n="apply.platformLabel">Platform</label>
           <select id="platform" name="platform" required>
-            <option value="" disabled selected>Choose your platform</option>
+            <option value="" disabled selected data-i18n="apply.platformChoose">Choose your platform</option>
             <option value="Spotify">Spotify</option>
             <option value="Apple Music">Apple Music</option>
             <option value="YouTube Music">YouTube Music</option>
@@ -68,71 +69,71 @@
           </select>
         </div>
         <div class="field">
-          <label for="genre">Genre</label>
-          <input type="text" id="genre" name="genre" required placeholder="e.g. Afrobeats, R&B, Indie Pop" />
+          <label for="genre" data-i18n="apply.genreLabel">Genre</label>
+          <input type="text" id="genre" name="genre" required placeholder="e.g. Afrobeats, R&B, Indie Pop" data-i18n-placeholder="apply.genrePlaceholder" />
         </div>
       </div>
 
       <div class="field">
-        <label for="profileLink">Link to your profile</label>
+        <label for="profileLink" data-i18n="apply.profileLinkLabel">Link to your profile</label>
         <input type="url" id="profileLink" name="profileLink" required placeholder="https://open.spotify.com/artist/..." />
       </div>
 
       <div class="field-row">
         <div class="field">
-          <label for="email">Email</label>
+          <label for="email" data-i18n="apply.emailLabel">Email</label>
           <input type="email" id="email" name="email" required placeholder="you@email.com" />
         </div>
         <div class="field">
-          <label for="phone">Phone <span style="text-transform:none;">(optional)</span></label>
+          <label for="phone" data-i18n="apply.phoneLabel">Phone <span style="text-transform:none;" data-i18n="apply.phoneOptional">(optional)</span></label>
           <input type="tel" id="phone" name="phone" placeholder="+234..." />
         </div>
       </div>
 
       <div class="field">
-        <label for="message">Tell us about you</label>
-        <textarea id="message" name="message" required placeholder="Your story, your sound, recent numbers, anything worth knowing."></textarea>
+        <label for="message" data-i18n="apply.messageLabel">Tell us about you</label>
+        <textarea id="message" name="message" required placeholder="Your story, your sound, recent numbers, anything worth knowing." data-i18n-placeholder="apply.messagePlaceholder"></textarea>
       </div>
 
       <div class="verify-block">
         <div class="verify-head">
-          <h4>Quick identity check</h4>
-          <p>Two photos to confirm you're a real applicant and cut down on spam. These are only ever seen by our scouting team, never posted publicly.</p>
+          <h4 data-i18n="apply.verifyHeading">Quick identity check</h4>
+          <p data-i18n="apply.verifyDesc">Two photos to confirm you're a real applicant and cut down on spam. These are only ever seen by our scouting team, never posted publicly.</p>
         </div>
         <div class="upload-row">
           <label class="upload-box" id="idBox">
             <img class="up-preview" id="idPreview" alt="" />
             <div class="up-check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12L10 17L19 8" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
             <span class="up-icon"><svg viewBox="0 0 32 32" fill="none"><rect x="3" y="7" width="26" height="18" rx="3" stroke="currentColor" stroke-width="1.8"/><circle cx="11" cy="16" r="3.4" stroke="currentColor" stroke-width="1.8"/><path d="M18 13H24M18 17H22" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M7 22C7.6 20 9.1 19 11 19C12.9 19 14.4 20 15 22" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
-            <span class="up-label">Photo of your ID</span>
-            <span class="up-hint">Any government-issued ID</span>
+            <span class="up-label" data-i18n="apply.idLabel">Photo of your ID</span>
+            <span class="up-hint" data-i18n="apply.idHint">Any government-issued ID</span>
             <input type="file" id="idPhoto" accept="image/*" capture="environment" required />
           </label>
           <label class="upload-box" id="selfieBox">
             <img class="up-preview" id="selfiePreview" alt="" />
             <div class="up-check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12L10 17L19 8" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
             <span class="up-icon"><svg viewBox="0 0 32 32" fill="none"><rect x="6" y="4" width="14" height="24" rx="3" stroke="currentColor" stroke-width="1.8"/><circle cx="13" cy="9" r="1.4" fill="currentColor"/><circle cx="13" cy="18" r="4" stroke="currentColor" stroke-width="1.8"/><path d="M22 12L27 9V21L22 18" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span>
-            <span class="up-label">You, holding that ID</span>
-            <span class="up-hint">Face + ID visible together</span>
+            <span class="up-label" data-i18n="apply.selfieLabel">You, holding that ID</span>
+            <span class="up-hint" data-i18n="apply.selfieHint">Face + ID visible together</span>
             <input type="file" id="selfieWithId" accept="image/*" capture="user" required />
           </label>
         </div>
-        <p class="upload-progress" id="uploadProgress">Uploading verification photos…</p>
+        <p class="upload-progress" id="uploadProgress" data-i18n="apply.uploadProgress">Uploading verification photos…</p>
         <label class="consent-row">
           <input type="checkbox" id="idConsent" required />
-          <span>I confirm these photos are of me, and I consent to Amberwave storing them to verify this application. I'm 18+ or applying with a guardian's consent.</span>
+          <span data-i18n="apply.consent">I confirm these photos are of me, and I consent to Amberwave storing them to verify this application. I'm 18+ or applying with a guardian's consent.</span>
         </label>
       </div>
 
-      <button type="submit" class="btn btn-primary btn-block" id="submitBtn" style="margin-top:24px;">Submit application</button>
-      <p class="form-note">Submitting doesn't sign you to anything. Our scouting team reviews every application and reaches out by email.</p>
+      <button type="submit" class="btn btn-primary btn-block" id="submitBtn" style="margin-top:24px;" data-i18n="apply.submitBtn">Submit application</button>
+      <p class="form-note" data-i18n="apply.formNote">Submitting doesn't sign you to anything. Our scouting team reviews every application and reaches out by email.</p>
     </form>
 
     <div id="successState" class="form-shell success-state" style="display:none;">
       <div class="mark"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12L10 17L19 8" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-      <h2 style="font-size:32px;">Application received</h2>
-      <p style="color:var(--mute);margin-top:12px;">Our scouting team will listen and follow up by email if it's a fit. Thanks for sending your signal.</p>
-      <a href="index.html" class="btn btn-ghost" style="margin-top:24px;">Back to home</a>
+      <h2 style="font-size:32px;" data-i18n="apply.successH2">Application received</h2>
+      <p style="color:var(--mute);margin-top:12px;" data-i18n="apply.successP">Our scouting team will listen and follow up by email if it's a fit. Thanks for sending your signal.</p>
+      <a href="index.html" class="btn btn-ghost" style="margin-top:24px;" data-i18n="apply.backHome">Back to home</a>
     </div>
 
   </div>
@@ -142,28 +143,29 @@
   <div class="wrap">
     <div class="foot-grid">
       <div>
-        <div class="logo" style="margin-bottom:14px;">AMBERWAVE<span>.</span></div>
-        <p>An artist scouting studio and independent record label — we market first, sign second.</p>
+        <div class="logo" style="margin-bottom:14px;"><img src="images/logo-mark.svg" alt="" />AMBERWAVE<span>.</span></div>
+        <p data-i18n="footer.tagline">An artist scouting studio and independent record label — we market first, sign second.</p>
       </div>
       <div>
-        <h5>Site</h5>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
+        <h5 data-i18n="footer.site">Site</h5>
+        <a href="index.html" data-i18n="nav.home">Home</a>
+        <a href="artists.html" data-i18n="nav.artists">Artists</a>
+        <a href="about.html" data-i18n="nav.about">About</a>
+        <a href="contact.html" data-i18n="nav.contact">Contact</a>
       </div>
       <div>
-        <h5>Get In</h5>
-        <a href="apply.html">Apply to Amberwave Records</a>
-        <a href="contact.html">General inquiries</a>
+        <h5 data-i18n="footer.getIn">Get In</h5>
+        <a href="apply.html" data-i18n="nav.apply">Apply to Amberwave Records</a>
+        <a href="contact.html" data-i18n="footer.generalInquiries">General inquiries</a>
       </div>
       <div>
-        <h5>Platforms we scout</h5>
+        <h5 data-i18n="footer.platformsHeading">Platforms we scout</h5>
         <p>Spotify · Apple Music · YouTube · SoundCloud · Audiomack · Boomplay</p>
       </div>
     </div>
     <div class="foot-bottom">
       <span>© <span id="year"></span> Amberwave Music Group</span>
-      <span>Built to find what's next.</span>
+      <span data-i18n="footer.builtToFind">Built to find what's next.</span>
     </div>
   </div>
 </footer>
@@ -171,6 +173,7 @@
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
 <script src="js/firebase-config.js"></script>
+<script src="js/i18n.js"></script>
 <script src="js/cloudinary-config.js"></script>
 <script src="js/main.js"></script>
 <script src="js/apply.js"></script>
